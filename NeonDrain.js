@@ -1,0 +1,10 @@
+// neon drain
+osc(6, 0.03, 1.7)
+  .kaleid()
+  .mult(osc(8, 0.001, 0).rotate(1.58))
+  .blend(o0, 0.94)
+  .modulateScale(osc(2, 0),-0.03)
+  .scale(0.8, () => (11.05 + 0.1 * Math.sin(16)))
+  .modulateRotate(osc(1,0.5,0).kaleid(115).scale(0.5),15,0)
+  .mult(osc(50,-0.1,18).kaleid(200))
+  .out(o0)
